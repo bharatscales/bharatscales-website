@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The BHARATSCALES platform — from raw data to confident decisions across IT, OT, and edge.">
+  <title>Platform | BHARATSCALES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html#home" class="header-brand">
+        <span class="header-brand-primary">
+          <span class="brand-word brand-word--blue">BHARAT</span><span class="brand-word brand-word--grey">SCALES</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="platform.html" class="active">Platform</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="agents.html">AI Agents</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="index.html#careers">Careers</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav-enquiry-btn">Contact us</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Platform: AI that works for you (tabbed) -->
+    <section class="industries" id="solutions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Built to work for you</span>
+          <h2 class="section-title">One platform — from raw data to confident decisions</h2>
+          <p class="section-desc">Get to value faster, repeat what works across every site, and find new efficiency throughout your operation.</p>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-list" id="tabList" role="tablist">
+            <button class="tab-btn active" data-tab="data" role="tab">Unified Data Engine</button>
+            <button class="tab-btn" data-tab="intelligence" role="tab">Operational Intelligence</button>
+            <button class="tab-btn" data-tab="workers" role="tab">Connected Workers</button>
+          </div>
+
+          <!-- Unified Data Engine -->
+          <div class="tab-panel active" id="data" role="tabpanel">
+            <div class="tab-grid">
+              <div class="tab-copy">
+                <h3>Capture, refine, and put every data stream to work — from PLCs to ERPs.</h3>
+                <p>Turn messy machine data into reliable, in-context insight. We bring IT, OT, and edge data together into one live source your teams can trust and act on.</p>
+                <a href="index.html#contact" class="link-arrow">Talk to an expert →</a>
+              </div>
+              <div class="tab-caps">
+                <h4>Capabilities</h4>
+                <ul class="cap-list">
+                  <li>Deploy on the edge, hybrid, or cloud — fits any plant setup</li>
+                  <li>Industry know-how baked in for data that makes sense</li>
+                  <li>Ready-to-use AI models and low-code tools for quick returns</li>
+                  <li>Mix-and-match apps that fit real work across assets and teams</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Operational Intelligence -->
+          <div class="tab-panel" id="intelligence" role="tabpanel">
+            <div class="tab-grid">
+              <div class="tab-copy">
+                <h3>Run faster, sharper operations at any scale.</h3>
+                <p>Help every engineer perform like your best one. Ask questions, pull up insights, and kick off actions in plain language — backed by AI assistants trained on your systems and your domain.</p>
+                <a href="index.html#contact" class="link-arrow">See it in action →</a>
+              </div>
+              <div class="tab-caps">
+                <h4>Capabilities</h4>
+                <ul class="cap-list">
+                  <li>Plain-language assistants — zero coding needed</li>
+                  <li>Live recommendations that understand the situation</li>
+                  <li>Safe, governed generative AI you can audit and explain</li>
+                  <li>Designed for plant and frontline work, not generic chatbots</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connected Workers -->
+          <div class="tab-panel" id="workers" role="tabpanel">
+            <div class="tab-grid">
+              <div class="tab-copy">
+                <h3>Smart workflows and on-the-spot insight for your teams.</h3>
+                <p>Swap paper checklists and word-of-mouth know-how for guided, step-by-step digital procedures — giving every worker AI support right where the job happens.</p>
+                <a href="index.html#contact" class="link-arrow">Empower your teams →</a>
+              </div>
+              <div class="tab-caps">
+                <h4>Capabilities</h4>
+                <ul class="cap-list">
+                  <li>Guided digital tasks with help in the moment</li>
+                  <li>Automatically learn best practices from the floor</li>
+                  <li>Timely alerts and safety prompts to stop mistakes</li>
+                  <li>Connects cleanly with your EAM, MES, and ERP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-cta">
+      <div class="container">
+        <h2>Ready to put your data to work?</h2>
+        <p>Tell us about your setup and we'll show you what AI automation and IoT can unlock.</p>
+        <a href="index.html#contact" class="btn btn-primary">Contact us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-subscribe">
+        <h3>Technology that works for you</h3>
+        <p>Subscribe for practical takes on AI automation and IoT for India's industries.</p>
+        <form class="subscribe-form" id="subscribeForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="subscribe-note" id="subscribeNote"></p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-links">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="solutions.html">AI Automation</a></li>
+            <li><a href="solutions.html">IoT Solutions</a></li>
+            <li><a href="solutions.html">Predictive Maintenance</a></li>
+            <li><a href="solutions.html">Real-time Analytics</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="platform.html">Unified Data Engine</a></li>
+            <li><a href="platform.html">Operational Intelligence</a></li>
+            <li><a href="platform.html">Connected Workers</a></li>
+            <li><a href="agents.html">AI Agents</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#home">About us</a></li>
+            <li><a href="index.html#careers">Careers</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <a href="index.html#home" class="footer-brand">
+          <span class="brand-word brand-word--blue">BHARAT</span><span class="brand-word brand-word--grey">SCALES</span>
+        </a>
+        <p>&copy; 2026 BHARATSCALES. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

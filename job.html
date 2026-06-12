@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job opening at BHARATSCALES — AI automation software and IoT solutions for industry.">
+  <title>Careers | BHARATSCALES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html#home" class="header-brand">
+        <span class="header-brand-primary">
+          <span class="brand-word brand-word--blue">BHARAT</span><span class="brand-word brand-word--grey">SCALES</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="platform.html">Platform</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="agents.html">AI Agents</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="index.html#careers">Careers</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav-enquiry-btn">Contact us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Job header -->
+  <header class="job-page-hero" id="jobHero">
+    <div class="container">
+      <a href="index.html#careers" class="job-back">← All openings</a>
+      <div class="job-page-hero-row">
+        <div>
+          <h1 class="job-page-title" id="jobTitle">Loading…</h1>
+          <p class="job-page-location" id="jobLocationTop"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky tabs -->
+  <nav class="job-page-tabs" id="jobTabs">
+    <div class="container job-page-tabs-inner">
+      <a href="#description" class="job-tab active">Job description</a>
+      <a href="#responsibilities" class="job-tab">Responsibilities</a>
+      <a href="#requirements" class="job-tab">Requirements</a>
+      <a href="#benefits" class="job-tab">Benefits</a>
+    </div>
+  </nav>
+
+  <!-- Job content -->
+  <main class="job-page-body">
+    <div class="container job-page-grid">
+      <article class="job-page-main">
+        <ul class="job-meta-list">
+          <li><strong>Job category:</strong> <span id="metaCategory"></span></li>
+          <li><strong>Primary location:</strong> <span id="metaLocation"></span></li>
+          <li><strong>Date posted:</strong> <span id="metaDate"></span></li>
+          <li><strong>Employment type:</strong> <span id="metaType"></span></li>
+          <li><strong>Experience:</strong> <span id="metaExperience"></span></li>
+          <li><strong>Travel:</strong> <span id="metaTravel"></span></li>
+        </ul>
+
+        <section id="description" class="job-section">
+          <p id="jobIntro" class="job-intro"></p>
+        </section>
+
+        <section id="responsibilities" class="job-section">
+          <h2>Primary responsibilities</h2>
+          <ul class="job-bullets" id="jobResponsibilities"></ul>
+        </section>
+
+        <section id="requirements" class="job-section">
+          <h2>What we're looking for</h2>
+          <ul class="job-bullets" id="jobRequirements"></ul>
+        </section>
+
+        <section id="benefits" class="job-section">
+          <h2>What you'll get</h2>
+          <ul class="job-bullets" id="jobBenefits"></ul>
+        </section>
+
+        <div class="job-apply-cta">
+          <button type="button" class="btn btn-primary btn-full" id="applyBottomBtn">Apply for this role</button>
+        </div>
+      </article>
+
+      <aside class="job-page-aside">
+        <div class="job-apply-card">
+          <h3 id="asideTitle"></h3>
+          <ul class="job-apply-summary">
+            <li><span>📍</span> <span id="asideLocation"></span></li>
+            <li><span>🗂️</span> <span id="asideType"></span></li>
+            <li><span>⏳</span> <span id="asideExperience"></span></li>
+          </ul>
+          <button type="button" class="btn btn-primary btn-full" id="applyAsideBtn">Apply now</button>
+          <p class="job-apply-note">We'll review and get back to you soon.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Job application modal -->
+  <div class="modal" id="applyModal" aria-hidden="true">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+      <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="modal-head">
+        <span class="section-tag">Apply now</span>
+        <h3 class="modal-title" id="applyModalTitle">Apply for this role</h3>
+        <p class="modal-sub">Fill in your details and attach your resume. We'll review and get back to you.</p>
+      </div>
+      <form class="apply-form" id="applyForm" novalidate>
+        <input type="hidden" id="applyRole" name="role">
+        <div class="form-group">
+          <label for="applyName">Full Name</label>
+          <input type="text" id="applyName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="applyEmail">Email Address</label>
+            <input type="email" id="applyEmail" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="applyPhone">Phone</label>
+            <input type="tel" id="applyPhone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="applyLinkedin">LinkedIn / Portfolio <span class="optional">(optional)</span></label>
+          <input type="url" id="applyLinkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="form-group">
+          <label for="applyResume">Resume</label>
+          <label class="file-drop" for="applyResume">
+            <span class="file-icon">📄</span>
+            <span class="file-text" id="fileText">Click to upload your resume (PDF, DOC, DOCX · max 5MB)</span>
+          </label>
+          <input type="file" id="applyResume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required hidden>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Submit application</button>
+        <p class="form-note" id="applyNote"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <a href="index.html#home" class="footer-brand">
+          <span class="brand-word brand-word--blue">BHARAT</span><span class="brand-word brand-word--grey">SCALES</span>
+        </a>
+        <p>&copy; 2026 BHARATSCALES. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="jobs-data.js"></script>
+  <script src="script.js"></script>
+  <script src="job.js"></script>
+</body>
+</html>
