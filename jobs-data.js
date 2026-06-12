@@ -32,14 +32,14 @@ window.JOBS = {
     ],
   },
   'business-developer': {
-    title: 'Business Developer',
+    title: 'Business Development Executive',
     category: 'Sales & Growth',
     location: 'Kanpur, India',
     type: 'Full-time',
     datePosted: '11/06/2026',
     travel: 'Occasional',
     experience: '1+ years experience',
-    intro: 'We\u2019re looking for a driven Business Developer to grow BHARATSCALES\u2019 footprint across India\u2019s industrial sector. You\u2019ll identify opportunities, build relationships with manufacturers, and help bring AI automation and IoT to the shop floor.',
+    intro: 'We\u2019re looking for a driven Business Development Executive to grow BHARATSCALES\u2019 footprint across India\u2019s industrial sector. You\u2019ll identify opportunities, build relationships with manufacturers, and help bring AI automation and IoT to the shop floor.',
     responsibilities: [
       'Identify, qualify, and pursue new business opportunities',
       'Build and maintain relationships with industrial clients and partners',
