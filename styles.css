@@ -1180,6 +1180,175 @@ button.job-card {
   font-size: 1.05rem;
 }
 
+/* ---- Blog / resource detail page ---- */
+.blog-page {
+  padding-top: clamp(90px, 11vw, 120px);
+}
+
+.blog-container {
+  max-width: 820px;
+}
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.blog-back:hover { color: var(--color-primary); }
+
+.blog-type {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.blog-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.blog-excerpt {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--color-ink-soft);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.blog-hero {
+  margin: 30px 0 8px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.blog-hero img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 42vw, 460px);
+  object-fit: cover;
+}
+
+.blog-body {
+  padding: 14px 0 clamp(50px, 7vw, 80px);
+}
+
+.blog-body h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 38px 0 14px;
+}
+
+.blog-body p {
+  color: var(--color-ink-soft);
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.blog-list {
+  list-style: none;
+  margin: 4px 0 22px;
+  padding: 0;
+}
+
+.blog-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  color: var(--color-ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.blog-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.blog-quote {
+  margin: 30px 0;
+  padding: 24px 28px;
+  background: var(--color-bg-tint);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.blog-quote blockquote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--color-ink);
+}
+
+.blog-quote figcaption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.blog-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+  margin: 30px 0;
+}
+
+.blog-stat {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  text-align: center;
+}
+
+.blog-stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.blog-stat-label {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+  line-height: 1.4;
+}
+
 /* ---- Job detail page ---- */
 .job-page-hero {
   background: var(--color-bg-soft);
