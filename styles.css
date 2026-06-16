@@ -767,6 +767,327 @@ a { color: inherit; }
 
 .strip-icon { font-size: 1.9rem; }
 
+/* ---- Platform: Industrial Intelligence Framework diagram ---- */
+.iif {
+  margin: 40px 0 24px;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(22px, 3vw, 38px);
+}
+
+.iif-head {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.iif-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.iif-sub {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+.iif-board {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.9fr) auto minmax(260px, 1.5fr) auto minmax(150px, 0.8fr);
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input groups */
+.iif-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iif-group {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iif-group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+
+.iif-group-head svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.iif-chip {
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* Connector rails */
+.iif-rail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  opacity: 0.55;
+}
+
+.iif-arrow {
+  width: 26px;
+  height: 26px;
+}
+
+.iif-rail--down {
+  margin: 6px 0;
+}
+
+/* Center pipeline */
+.iif-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.iif-nodes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.iif-node {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 18px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.iif-node:hover {
+  transform: translateY(-3px);
+  border-color: rgba(226, 59, 59, 0.35);
+}
+
+.iif-node svg {
+  width: 26px;
+  height: 26px;
+  color: var(--color-primary);
+}
+
+.iif-node span {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--color-ink);
+  line-height: 1.25;
+}
+
+.iif-node--ai {
+  background: linear-gradient(150deg, var(--color-primary), var(--color-primary-dark));
+  border-color: transparent;
+  box-shadow: 0 12px 30px rgba(226, 59, 59, 0.28);
+}
+
+.iif-node--ai svg,
+.iif-node--ai span { color: #fff; }
+
+.iif-node--ai small {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.72rem;
+}
+
+.iif-node--sm {
+  padding: 14px 10px;
+}
+
+.iif-node--sm svg { width: 22px; height: 22px; }
+.iif-node--sm span { font-size: 0.8rem; }
+
+.iif-outputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Output channels */
+.iif-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Footer pills */
+.iif-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-line);
+}
+
+.iif-foot span {
+  position: relative;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.iif-foot span:not(:last-child)::after {
+  content: "•";
+  position: absolute;
+  right: -16px;
+  color: var(--color-primary);
+}
+
+@media (max-width: 860px) {
+  .iif-board {
+    grid-template-columns: 1fr;
+  }
+  .iif-rail { transform: rotate(90deg); margin: 4px 0; }
+  .iif-rail--down { transform: none; }
+  .iif-nodes { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .iif-outputs { grid-template-columns: 1fr; }
+}
+
+/* ---- Platform: how it works ---- */
+.platform-steps {
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: var(--color-bg-soft);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  transition: var(--transition);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(226, 59, 59, 0.3);
+}
+
+.step-num {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.step-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  color: var(--color-muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+/* ---- Platform: architecture layers ---- */
+.platform-layers {
+  padding: clamp(64px, 8vw, 100px) 0;
+}
+
+.layers-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.layer-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  gap: 24px;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  transition: var(--transition);
+}
+
+.layer-row:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.layer-label {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.layer-body {
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* ---- Platform: benefits ---- */
+.platform-benefits {
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: var(--color-bg-soft);
+}
+
+@media (max-width: 640px) {
+  .layer-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* ---- Solutions ---- */
 .solutions {
   padding: clamp(80px, 10vw, 120px) 0;
