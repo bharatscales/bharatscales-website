@@ -11,6 +11,11 @@ function renderBlock(block) {
       h.textContent = block.text;
       return h;
     }
+    case 'h3': {
+      const h = document.createElement('h3');
+      h.textContent = block.text;
+      return h;
+    }
     case 'p': {
       const p = document.createElement('p');
       p.textContent = block.text;
@@ -26,6 +31,16 @@ function renderBlock(block) {
       });
       return ul;
     }
+    case 'ol': {
+      const ol = document.createElement('ol');
+      ol.className = 'blog-ol';
+      block.items.forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        ol.appendChild(li);
+      });
+      return ol;
+    }
     case 'quote': {
       const fig = document.createElement('figure');
       fig.className = 'blog-quote';
@@ -38,6 +53,57 @@ function renderBlock(block) {
         fig.appendChild(cap);
       }
       return fig;
+    }
+    case 'callout': {
+      const div = document.createElement('div');
+      div.className = 'blog-callout';
+      if (block.label) {
+        const strong = document.createElement('strong');
+        strong.textContent = block.label;
+        div.appendChild(strong);
+      }
+      const p = document.createElement('p');
+      p.textContent = block.text;
+      div.appendChild(p);
+      return div;
+    }
+    case 'link': {
+      const p = document.createElement('p');
+      p.className = 'blog-link-wrap';
+      const a = document.createElement('a');
+      a.className = 'link-arrow';
+      a.href = block.href;
+      a.textContent = block.text;
+      p.appendChild(a);
+      return p;
+    }
+    case 'cta': {
+      const div = document.createElement('div');
+      div.className = 'blog-inline-cta';
+      const h = document.createElement('h3');
+      h.textContent = block.title;
+      div.appendChild(h);
+      const p = document.createElement('p');
+      p.textContent = block.body;
+      div.appendChild(p);
+      const actions = document.createElement('div');
+      actions.className = 'blog-inline-cta-actions';
+      if (block.primaryHref) {
+        const primary = document.createElement('a');
+        primary.className = 'btn btn-primary';
+        primary.href = block.primaryHref;
+        primary.textContent = block.primaryText || 'Contact us';
+        actions.appendChild(primary);
+      }
+      if (block.secondaryHref) {
+        const secondary = document.createElement('a');
+        secondary.className = 'btn btn-ghost';
+        secondary.href = block.secondaryHref;
+        secondary.textContent = block.secondaryText || 'Learn more';
+        actions.appendChild(secondary);
+      }
+      div.appendChild(actions);
+      return div;
     }
     case 'stats': {
       const wrap = document.createElement('div');
@@ -57,9 +123,47 @@ function renderBlock(block) {
       });
       return wrap;
     }
+    case 'faq': {
+      const section = document.createElement('section');
+      section.className = 'faq';
+      const dl = document.createElement('dl');
+      dl.className = 'faq-list';
+      block.items.forEach(item => {
+        const wrap = document.createElement('div');
+        wrap.className = 'faq-item';
+        const dt = document.createElement('dt');
+        dt.textContent = item.q;
+        const dd = document.createElement('dd');
+        dd.textContent = item.a;
+        wrap.appendChild(dt);
+        wrap.appendChild(dd);
+        dl.appendChild(wrap);
+      });
+      section.appendChild(dl);
+      return section;
+    }
     default:
       return document.createComment('unknown block');
   }
+}
+
+function updateMetaDescription(description) {
+  if (!description) return;
+  let meta = document.querySelector('meta[name="description"]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.name = 'description';
+    document.head.appendChild(meta);
+  }
+  meta.content = description;
+}
+
+function injectSchema(schema) {
+  if (!schema) return;
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
 }
 
 function renderBlog() {
@@ -75,7 +179,11 @@ function renderBlog() {
     return;
   }
 
-  document.title = `${blog.title} | BHARATSCALES`;
+  const seoTitle = blog.seoTitle || blog.title;
+  document.title = `${seoTitle} | BHARATSCALES`;
+  updateMetaDescription(blog.metaDescription || blog.excerpt);
+  injectSchema(blog.schema);
+
   document.getElementById('blogType').textContent = blog.type;
   document.getElementById('blogTitle').textContent = blog.title;
   document.getElementById('blogExcerpt').textContent = blog.excerpt;
