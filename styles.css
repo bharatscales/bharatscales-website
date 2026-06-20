@@ -1371,6 +1371,27 @@ a { color: inherit; }
   padding: 26px 28px 30px;
 }
 
+.blog-card-excerpt {
+  margin: 10px 0 12px;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.blog-card-meta {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.section-desc {
+  max-width: 640px;
+  margin-top: 12px;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
 .resource-type {
   display: inline-block;
   font-size: 0.74rem;
