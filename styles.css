@@ -477,30 +477,11 @@ a { color: inherit; }
 }
 
 .bsone-cta-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-accent);
-}
-
-.bsone-cta-title {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--color-ink);
-  line-height: 1.2;
-}
-
-.bsone-cta-title .bsone-cta-mark {
-  color: #e2483d;
-}
-
-.bsone-cta-title sup {
-  font-size: 0.55em;
-  position: relative;
-  top: -0.45em;
 }
 
 .bsone-cta-action {
