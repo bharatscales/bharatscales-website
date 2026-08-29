@@ -2440,6 +2440,26 @@ button.job-card {
   font-size: 0.85rem;
 }
 
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-legal-link:hover {
+  color: #fff;
+}
+
+.legal-page .blog-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-page .blog-body h3 {
+  margin-top: 1.25rem;
+}
+
 /* ---- Animations ---- */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
