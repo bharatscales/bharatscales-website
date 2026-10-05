@@ -175,6 +175,83 @@ a { color: inherit; }
 
 .nav-links a:hover { color: var(--color-primary); }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle,
+.nav-dropdown.is-current .nav-dropdown-toggle {
+  color: var(--color-primary);
+}
+
+.nav-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.open .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  z-index: 30;
+  min-width: 250px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active {
+  background: var(--color-bg-tint);
+  color: var(--color-primary);
+}
+
 .nav-enquiry-btn {
   display: inline-flex;
   align-items: center;
@@ -1340,6 +1417,18 @@ a { color: inherit; }
   color: var(--color-muted);
   font-size: 0.96rem;
   line-height: 1.65;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+  gap: 22px;
+  justify-content: center;
+}
+
+.tool-card .link-arrow {
+  display: inline-block;
+  margin-top: 18px;
 }
 
 /* ---- Trust band ---- */
@@ -2516,6 +2605,45 @@ button.job-card {
   }
 
   .nav-links a { font-size: 1.05rem; }
+
+  .nav-dropdown { width: 100%; }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.05rem;
+  }
+
+  .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu {
+    position: static;
+    left: auto;
+    min-width: 0;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 0 0 8px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    transform: none;
+  }
+
+  .nav-dropdown-menu {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+    pointer-events: auto;
+  }
+
+  .nav-dropdown-menu a {
+    font-size: 0.98rem;
+    padding: 8px 10px;
+  }
 
   .nav-enquiry-btn { width: 100%; }
 

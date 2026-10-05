@@ -24,6 +24,40 @@ if (navToggle && navMenu) {
   });
 }
 
+// Solutions dropdown
+const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+function closeNavDropdowns() {
+  navDropdowns.forEach(dropdown => {
+    dropdown.classList.remove('open');
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  });
+}
+
+navDropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const willOpen = !dropdown.classList.contains('open');
+    closeNavDropdowns();
+    if (willOpen) {
+      dropdown.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.nav-dropdown')) closeNavDropdowns();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeNavDropdowns();
+});
+
 // Industry tabs
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
